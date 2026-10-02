@@ -29,14 +29,14 @@ const pathname = usePathname()
     )
 
     return (
-       <div className="navbar ">
+       <div className="navbar">
   <div className="flex-1">
     <Link href='/' className='text-xl font-bold cursor-pointer'>
         KeenKeeper
 </Link>
   </div>
   <div className="flex-none">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-1 text-base font-semibold">
      {links}
     </ul>
   </div>
