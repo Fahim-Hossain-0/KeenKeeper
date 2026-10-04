@@ -3,7 +3,14 @@ import { connect } from "@/lib/dbConnect";
 const callHistoryCollection = connect('callHistory')
 
 export async function GET(request) {
-    const result = await callHistoryCollection.find().toArray()
+    const {searchParams} = new URL(request.url)
+    const type =searchParams.get("type")
+
+    const query = {}
+    if(type) query.type = type
+
+    const result = await callHistoryCollection.find(query).toArray()
+    
     return Response.json({
          status:200,
          result
