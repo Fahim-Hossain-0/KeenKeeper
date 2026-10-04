@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Banner from "./components/Banner";
-import UserCard from "./components/UserCard";
+import Banner from "@/components/Banner";
+import UserCard from "@/components/UserCard";
+
 
 export default function Home() {
   return (

@@ -1,4 +1,6 @@
-import { connect } from "@/app/lib/dbConnect"
+// import { connect } from "@/lib/dbConnect"
+
+import { connect } from "@/lib/dbConnect"
 
 const userCollection = connect("users")
 

@@ -2,9 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 const UserCard = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC}/api/users`, {
-    cache: "no-store",
-  });
+  const res = await fetch(`${process.env.NEXT_PUBLIC}/api/users`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch users");
@@ -74,7 +72,7 @@ const UserCard = async () => {
     {result.map((user) => (
       <Link
         key={user._id || user.id}
-        href={`/friends/${user._id || user.id}`}
+        href={`/user/${user._id || user.id}`}
         className="group block"
       >
         <article
