@@ -9,7 +9,7 @@ export async function GET(request) {
     const query = {}
     if(type) query.type = type
 
-    const result = await callHistoryCollection.find(query).toArray()
+    const result = await callHistoryCollection.find(query).sort({type:1}).toArray()
     
     return Response.json({
          status:200,
