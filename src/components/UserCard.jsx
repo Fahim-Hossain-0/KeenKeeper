@@ -1,14 +1,11 @@
 import React from "react";
 import Link from "next/link";
+import { connect } from "@/lib/dbConnect";
 
 const UserCard = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC}/api/users`);
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch users");
-  }
-
-  const { result } = await res.json();
+  const userCollection = connect("users");
+  const rawResult = await userCollection.find().toArray();
+  const result = JSON.parse(JSON.stringify(rawResult));
 
  const getStatusClass = (status) => {
   switch (status) {
